@@ -12,6 +12,7 @@
 /var/sessions/
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
+composer.lock
 /vendor/
 /web/bundles/
 /nbproject/private/
