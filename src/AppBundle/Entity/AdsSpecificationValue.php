@@ -5,25 +5,27 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * SpecificationHasSpecification
+ * @ORM\Entity
+ * @ORM\Table(name="ya_ads_specification_value")
  */
-class SpecificationHasSpecification
-{
+class AdsSpecificationValue {
+
     /**
-     * @var integer
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
-    
     /**
-     * @var string
+     * @ORM\Column(type="string")
      */
     private $value;
 
     /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\AdsSpecification",inversedBy="adsSpecificationValue")
+     * @ORM\JoinColumn(name="ads_specification_id", referencedColumnName="id")
      */
     private $adsSpecification;
 
-
-    
 }

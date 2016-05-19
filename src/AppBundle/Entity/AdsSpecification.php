@@ -5,7 +5,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ProductHasSpecification
+ * @ORM\Entity
+ * @ORM\Table(name="ya_ads_specification")
  */
 class AdsSpecification {
 
@@ -17,14 +18,19 @@ class AdsSpecification {
     private $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\AdsSpecificationValue", mappedBy="adsSpecification")
      */
     private $adsSpecificationValue;
 
     /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Ads",inversedBy="adsSpecification")
+     * @ORM\JoinColumn(name="ads_id", referencedColumnName="id")
      */
     private $ads;
 
     /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Specification")
+     * @ORM\JoinColumn(name="specification_id", referencedColumnName="id")
      */
     private $specification;
 

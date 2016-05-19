@@ -5,12 +5,15 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Category
+ * @ORM\Entity
+ * @ORM\Table(name="ya_category")
  */
 class Category {
 
     /**
-     * @var integer
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
@@ -19,55 +22,8 @@ class Category {
     }
 
     /**
-     * @var string
-     * @Expose
+     * @ORM\Column(type="string")
      */
-    private $title;
-    
-    /**
-     * @var integer
-     */
-    private $lft;
-
-    /**
-     * @var integer
-     */
-    private $rgt;
-
-    /**
-     * @var integer
-     */
-    private $root;
-
-    /**
-     * @var integer
-     */
-    private $lvl;
-
-    /**
-     * @var string
-     * @Expose
-     */
-    private $image;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $ads;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $children;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $Specifications;
-
-    /**
-     * @var \AppBundle\Entity\Category
-     */
-    private $parent;
+    private $name;
 
 }

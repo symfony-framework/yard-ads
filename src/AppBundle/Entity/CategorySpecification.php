@@ -3,23 +3,29 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+
 /**
- * CategoryHasSpecification
+ * @ORM\Entity
+ * @ORM\Table(name="ya_category_specification")
  */
 class CategorySpecification
 {
     /**
-     * @var integer
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var \AppBundle\Entity\Category
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
 
     /**
-     * @var \AppBundle\Entity\Specification
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Specification")
+     * @ORM\JoinColumn(name="specification_id", referencedColumnName="id")
      */
     private $specification;
 

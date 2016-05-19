@@ -2,9 +2,11 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Province
+ * @ORM\Entity
+ * @ORM\Table(name="ya_province")
  */
 class Province {
 
@@ -13,20 +15,19 @@ class Province {
     }
 
     /**
-     * @var integer
-     * @Expose
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var string
-     * @Expose
+     * @ORM\Column(type="string")
      */
     private $name;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     * @Expose
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\City", mappedBy="province")
      */
     private $cities;
 

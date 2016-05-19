@@ -6,7 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * City
+ * @ORM\Entity
+ * @ORM\Table(name="ya_city")
  */
 class City
 {
@@ -15,16 +16,20 @@ class City
     }
 
     /**
-     * @var integer
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @var string
+     * @ORM\Column(type="string")
      */
     private $name;
 
     /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Province",inversedBy="cities")
+     * @ORM\JoinColumn(name="province_id", referencedColumnName="id")
      */
     private $province;
 

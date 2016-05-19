@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -58,42 +58,30 @@ class Ads {
     private $visited;
 
     /**
-     * @var \DateTime
-     * @Gedmo\Timestampable(on="create")
-     */
-    private $createdAt;
-
-    /**
-     * @var \DateTime
-     * @Gedmo\Timestampable(on="update")
-     */
-    private $updatedAt;
-
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle:Medias", mappedBy="ads")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Media", mappedBy="ads")
      */
     private $medias;
     
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle:AdsSpecification", mappedBy="ads")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\AdsSpecification", mappedBy="ads")
      */
     private $adsSpecification;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle:Category")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
 
     /**
-     * @ORM\ManyToOne(targetEntity="UserBundle:User")
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle:City")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\City")
+     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
      */
     private $city;
 

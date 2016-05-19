@@ -6,30 +6,16 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="ya_specification")
+ * @ORM\Table(name="ya_report")
  */
-class Specification {
-
+class Report
+{
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    public function __toString() {
-        return $this->name;
-    }
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $name;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $type;
 
     /**
      * @ORM\Column(type="string")
@@ -39,7 +25,17 @@ class Specification {
     /**
      * @ORM\Column(type="string")
      */
-    private $content;
+    private $description;
 
-   
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $ipAddress;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Ads")
+     * @ORM\JoinColumn(name="ads_id", referencedColumnName="id")
+     */
+    private $ads;
+
 }
