@@ -1,0 +1,4 @@
+services:
+    app.ads_service:
+        class: AppBundle\Services\AdsService
+        arguments: [ "@service_container" ]

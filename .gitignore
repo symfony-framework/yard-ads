@@ -16,3 +16,6 @@ composer.lock
 /vendor/
 /web/bundles/
 /nbproject/private/
+
+
+/_design/

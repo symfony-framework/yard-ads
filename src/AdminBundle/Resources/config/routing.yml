@@ -1,0 +1,8 @@
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: AdminBundle:Default:dashboard  }
+    
+# ads    
+admin_ads:
+    path:     /admin/ads
+    defaults: { _controller: AdminBundle:Ads:list  }

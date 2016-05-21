@@ -16,12 +16,19 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             
+            # extera bundles
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            
             # authentication and user bundle
             new FOS\UserBundle\FOSUserBundle(),
             new UserBundle\UserBundle(),
             
             # app bundle,
             new AppBundle\AppBundle(),
+            new AdminBundle\AdminBundle(),
+            
+            # paginator bundle
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

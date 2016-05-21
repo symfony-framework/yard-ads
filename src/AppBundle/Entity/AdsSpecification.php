@@ -34,4 +34,103 @@ class AdsSpecification {
      */
     private $specification;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->adsSpecificationValue = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add adsSpecificationValue
+     *
+     * @param \AppBundle\Entity\AdsSpecificationValue $adsSpecificationValue
+     *
+     * @return AdsSpecification
+     */
+    public function addAdsSpecificationValue(\AppBundle\Entity\AdsSpecificationValue $adsSpecificationValue)
+    {
+        $this->adsSpecificationValue[] = $adsSpecificationValue;
+
+        return $this;
+    }
+
+    /**
+     * Remove adsSpecificationValue
+     *
+     * @param \AppBundle\Entity\AdsSpecificationValue $adsSpecificationValue
+     */
+    public function removeAdsSpecificationValue(\AppBundle\Entity\AdsSpecificationValue $adsSpecificationValue)
+    {
+        $this->adsSpecificationValue->removeElement($adsSpecificationValue);
+    }
+
+    /**
+     * Get adsSpecificationValue
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAdsSpecificationValue()
+    {
+        return $this->adsSpecificationValue;
+    }
+
+    /**
+     * Set ads
+     *
+     * @param \AppBundle\Entity\Ads $ads
+     *
+     * @return AdsSpecification
+     */
+    public function setAds(\AppBundle\Entity\Ads $ads = null)
+    {
+        $this->ads = $ads;
+
+        return $this;
+    }
+
+    /**
+     * Get ads
+     *
+     * @return \AppBundle\Entity\Ads
+     */
+    public function getAds()
+    {
+        return $this->ads;
+    }
+
+    /**
+     * Set specification
+     *
+     * @param \AppBundle\Entity\Specification $specification
+     *
+     * @return AdsSpecification
+     */
+    public function setSpecification(\AppBundle\Entity\Specification $specification = null)
+    {
+        $this->specification = $specification;
+
+        return $this;
+    }
+
+    /**
+     * Get specification
+     *
+     * @return \AppBundle\Entity\Specification
+     */
+    public function getSpecification()
+    {
+        return $this->specification;
+    }
 }

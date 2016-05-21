@@ -28,4 +28,62 @@ class AdsSpecificationValue {
      */
     private $adsSpecification;
 
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set value
+     *
+     * @param string $value
+     *
+     * @return AdsSpecificationValue
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get value
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Set adsSpecification
+     *
+     * @param \AppBundle\Entity\AdsSpecification $adsSpecification
+     *
+     * @return AdsSpecificationValue
+     */
+    public function setAdsSpecification(\AppBundle\Entity\AdsSpecification $adsSpecification = null)
+    {
+        $this->adsSpecification = $adsSpecification;
+
+        return $this;
+    }
+
+    /**
+     * Get adsSpecification
+     *
+     * @return \AppBundle\Entity\AdsSpecification
+     */
+    public function getAdsSpecification()
+    {
+        return $this->adsSpecification;
+    }
 }

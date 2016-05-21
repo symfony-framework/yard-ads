@@ -1,0 +1,9 @@
+#
+#   using this file to place program setting
+#   this file builds for developers 
+#
+
+
+parameters:
+    yard_ads.paginator_service: "knp_paginator" # you can use your own custome paginator service
+    yard_ads.ads_service: "app.ads_service"

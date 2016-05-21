@@ -3,12 +3,20 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     
+    # system config
+    - { resource: "yard_ads.yml" }
+    - { resource: "paginator.yml" }
+    
     # user bundle
     - { resource: "@UserBundle/Resources/config/config.yml" }
     - { resource: "@UserBundle/Resources/config/services.yml" }
     
     # app bundle
     - { resource: "@AppBundle/Resources/config/services.yml" }
+    
+    
+    # admin bundle
+    - { resource: "@AdminBundle/Resources/config/services.yml" }
     
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -74,3 +82,11 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+
+# Assetic Configuration
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~

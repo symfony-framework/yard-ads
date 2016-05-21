@@ -29,4 +29,62 @@ class CategorySpecification
      */
     private $specification;
 
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set category
+     *
+     * @param \AppBundle\Entity\Category $category
+     *
+     * @return CategorySpecification
+     */
+    public function setCategory(\AppBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \AppBundle\Entity\Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * Set specification
+     *
+     * @param \AppBundle\Entity\Specification $specification
+     *
+     * @return CategorySpecification
+     */
+    public function setSpecification(\AppBundle\Entity\Specification $specification = null)
+    {
+        $this->specification = $specification;
+
+        return $this;
+    }
+
+    /**
+     * Get specification
+     *
+     * @return \AppBundle\Entity\Specification
+     */
+    public function getSpecification()
+    {
+        return $this->specification;
+    }
 }
