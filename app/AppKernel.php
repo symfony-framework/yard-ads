@@ -29,6 +29,9 @@ class AppKernel extends Kernel
             
             # paginator bundle
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            
+            # Doctrine Extensions Bundle
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
