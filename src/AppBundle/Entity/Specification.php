@@ -37,7 +37,7 @@ class Specification {
     private $title;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="array")
      */
     private $content;
 

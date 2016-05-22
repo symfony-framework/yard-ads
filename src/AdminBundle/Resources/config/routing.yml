@@ -1,3 +1,4 @@
+# dashboard
 admin_homepage:
     path:     /admin
     defaults: { _controller: AdminBundle:Default:dashboard  }
@@ -6,3 +7,14 @@ admin_homepage:
 admin_ads:
     path:     /admin/ads
     defaults: { _controller: AdminBundle:Ads:list  }
+    
+# specification    
+admin_specification:
+    path:     /admin/specification
+    defaults: { _controller: AdminBundle:Specification:list  }    
+admin_specification_add:
+    path:     /admin/specification/add
+    defaults: { _controller: AdminBundle:Specification:add  }     
+admin_specification_remove:
+    path:     /admin/specification/remove/{id}
+    defaults: { _controller: AdminBundle:Specification:remove  }     

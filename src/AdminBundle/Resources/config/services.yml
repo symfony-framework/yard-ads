@@ -2,3 +2,6 @@ services:
     app.ads_service:
         class: AppBundle\Services\AdsService
         arguments: [ "@service_container" ]
+    app.specification_service:
+        class: AppBundle\Services\SpecificationService
+        arguments: [ "@service_container" ]    
