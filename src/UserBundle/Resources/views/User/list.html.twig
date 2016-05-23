@@ -12,16 +12,16 @@
                     <table class="table table-bordered">
                         <tr>
                             <th style="width: 10px">#</th>
-                            <th>{{'name' | trans}}</th>
-                            <th>{{'status' | trans}}</th>
+                            <th>{{'username' | trans}}</th>
+                            <th></th>
                             <th>{{'action' | trans}}</th>
                         </tr>
                         {% for item in list %}
                             <tr>
                                 <td>{{item.id}}</td>
-                                <td>{{item.name}}</td>
-                                <td>{{item.status}}</td>
+                                <td>{{item.username}}</td>
                                 <td></td>
+                                <td><a class="btn btn-danger" href="{{path('user_remove',{'id': item.id} )}}"><i class="fa fa-close"></i></a></td>
                             </tr>
                         {% endfor %}
                     </table>
